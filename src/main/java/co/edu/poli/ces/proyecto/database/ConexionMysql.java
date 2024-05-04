@@ -62,7 +62,7 @@ public class ConexionMysql {
 
     }
     public List<Curso> getCursos() {
-        String sql = "SELECT * FROM cursos";
+        String sql = "SELECT * FROM courses";
 
         List<Curso> cursos = new ArrayList<>();
         try {
@@ -71,7 +71,7 @@ public class ConexionMysql {
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()) {
-                cursos.add(new Curso(result.getInt("id"), result.getString("nombre_curso"), result.getString("profesor"), result.getString("descripcion"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
+                cursos.add(new Curso(result.getInt("id"), result.getString("name_course"), result.getString("teacher"), result.getString("description"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
@@ -88,7 +88,7 @@ public class ConexionMysql {
     }
 
     public List<Horario> getHorarios() {
-        String sql = "SELECT * FROM horarios";
+        String sql = "SELECT * FROM schedules";
 
         List<Horario> horarios = new ArrayList<>();
         try {
@@ -97,7 +97,7 @@ public class ConexionMysql {
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()) {
-                horarios.add(new Horario(result.getInt("id_estudiante"), result.getInt("id_curso"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
+                horarios.add(new Horario(result.getInt("id_student"), result.getInt("id_course"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
