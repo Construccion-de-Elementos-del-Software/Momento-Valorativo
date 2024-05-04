@@ -21,6 +21,16 @@ public class Curso {
     public Curso() {
     }
 
+    public Curso(int id, String nombre_curso, String profesor, String descripcion, Date createdAt, Date updatedAt, Date deletedAt) {
+        this.id = id;
+        this.nombre_curso = nombre_curso;
+        this.profesor = profesor;
+        this.descripcion = descripcion;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+    }
+
     public Curso(int id, String nombre_curso, String profesor, String descripcion) {
         this.id = id;
         this.nombre_curso = nombre_curso;

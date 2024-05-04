@@ -21,10 +21,19 @@ public class Horario {
     public Horario() {;
     }
 
+    public Horario(int id_estudiante, int id_curso, Date createdAt, Date updatedAt, Date deletedAt) {
+        this.id_estudiante = id_estudiante;
+        this.id_curso = id_curso;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+    }
+
     public Horario(int id_estudiante, int id_curso) {
         this.id_estudiante = id_estudiante;
         this.id_curso = id_curso;
     }
+
 
     // *************************
     // ** GETTER AND SETTERS  **

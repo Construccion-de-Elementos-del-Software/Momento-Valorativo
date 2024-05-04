@@ -23,6 +23,16 @@ public class Alumno {
     public Alumno() {
     }
 
+    public Alumno(int id, String nombre, String apellidos, int edad, Date createdAt, Date updatedAt, Date deletedAt) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+    }
+
     public Alumno(int id, String nombre, String apellidos, int edad) {
         this.id = id;
         this.nombre = nombre;
