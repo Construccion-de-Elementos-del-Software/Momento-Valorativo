@@ -21,7 +21,7 @@ public class ConexionMysql {
         password = "";
         port = 3306;
         host = "localhost";
-        nameDatabase = "momento_valorativo";
+        nameDatabase = "database_evaluative_moment";
     }
 
     private void createConexion(){
@@ -36,7 +36,7 @@ public class ConexionMysql {
     }
 
     public List<Alumno> getAlumnos()  {
-        String sql = "SELECT * FROM alumnos";
+        String sql = "SELECT * FROM students";
 
         List<Alumno> alumnos = new ArrayList<>();
         try {
@@ -45,7 +45,7 @@ public class ConexionMysql {
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()){
-                alumnos.add(new Alumno(result.getInt("id"),result.getString("nombre"),result.getString("apellidos"),result.getInt("edad"),result.getDate("createdAt"),result.getDate("updatedAt"),result.getDate("deletedAt")));
+                alumnos.add(new Alumno(result.getInt("id"),result.getString("name"),result.getString("lastName"),result.getInt("age"),result.getDate("createdAt"),result.getDate("updatedAt"),result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
