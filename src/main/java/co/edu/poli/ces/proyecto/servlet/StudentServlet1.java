@@ -34,25 +34,25 @@ public class StudentServlet1 {
             resp.setContentType("application/json");
             PrintWriter out = resp.getWriter();
             List<Student> listStudents = cnn.getAlumnos();
-            List<Student> alumnosMayoresPromedio = new ArrayList<>();
-            int sumEdades = 0;
-            int nEstudiantes = listStudents.size();
+            List<Student> studentsOlderAverageAge = new ArrayList<>();
+            int sumAges = 0;
+            int nStudentes = listStudents.size();
 
             for (Student student : listStudents){
-                sumEdades = sumEdades + student.getEdad();
+                sumAges = sumAges + student.getAge();
             }
 
-            double promedioEdades = sumEdades / nEstudiantes;
+            double avarageAge = sumAges / nStudentes;
 
 
             for (Student al: listStudents){
-                if (al.getEdad() > promedioEdades) {
-                    alumnosMayoresPromedio.add(al);
+                if (al.getAge() > avarageAge) {
+                    studentsOlderAverageAge.add(al);
                 }
             }
 
 
-            out.print(gson.toJson(alumnosMayoresPromedio));
+            out.print(gson.toJson(studentsOlderAverageAge));
             out.flush();
         }
 
