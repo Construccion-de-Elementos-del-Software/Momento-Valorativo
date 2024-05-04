@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "studentServlet", value = "/students")
+@WebServlet(name = "studentCourseServlet", value = "/students")
 public class StudentCourseServlet extends HttpServlet {
     private ConexionMysql cnn;
     private GsonBuilder gsonBuilder;
