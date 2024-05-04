@@ -1,3 +1,5 @@
+CREATE DATABASE `momento_valorativo`;
+
 CREATE TABLE `alumnos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
