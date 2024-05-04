@@ -2,14 +2,14 @@ package co.edu.poli.ces.proyecto.dao;
 
 import java.util.Date;
 
-public class Alumno {
-    // ******************************
-    // **   ATRIBUTOS DE LA CLASE  **
-    // ******************************
+public class Student {
+    // *************************
+    // **   CLASS ATTRIBUTES  **
+    // *************************
     private int id;
-    private String nombre;
-    private String apellidos;
-    private int edad;
+    private String name;
+    private String lastName;
+    private int age;
     private Date createdAt;
     private Date updatedAt;
     private Date deletedAt;
@@ -20,24 +20,24 @@ public class Alumno {
     // ** SOBRECARGA DE CONSTRUCTORES  **
     // **********************************
 
-    public Alumno() {
+    public Student() {
     }
 
-    public Alumno(int id, String nombre, String apellidos, int edad, Date createdAt, Date updatedAt, Date deletedAt) {
+    public Student(int id, String name, String lastName, int age, Date createdAt, Date updatedAt, Date deletedAt) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.edad = edad;
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
     }
 
-    public Alumno(int id, String nombre, String apellidos, int edad) {
+    public Student(int id, String name, String lastName, int age) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.edad = edad;
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
     }
 
     // *************************
@@ -53,28 +53,28 @@ public class Alumno {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getAge() {
+        return age;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Date getCreatedAt() {
@@ -103,11 +103,11 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" +
+        return "Student{" +
                 "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", edad=" + edad +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", deletedAt=" + deletedAt +

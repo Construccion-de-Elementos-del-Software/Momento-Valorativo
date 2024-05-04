@@ -2,14 +2,14 @@ package co.edu.poli.ces.proyecto.dao;
 
 import java.util.Date;
 
-public class Curso {
-    // ******************************
-    // **   ATRIBUTOS DE LA CLASE  **
-    // ******************************
+public class Course {
+    // *************************
+    // **   CLASS ATTRIBUTES  **
+    // *************************
     private int id;
-    private String nombre_curso;
-    private String profesor;
-    private String descripcion;
+    private String name_course;
+    private String teacher;
+    private String description;
     private Date createdAt;
     private Date updatedAt;
     private Date deletedAt;
@@ -18,24 +18,24 @@ public class Curso {
     // ** SOBRECARGA DE CONSTRUCTORES  **
     // **********************************
 
-    public Curso() {
+    public Course() {
     }
 
-    public Curso(int id, String nombre_curso, String profesor, String descripcion, Date createdAt, Date updatedAt, Date deletedAt) {
+    public Course(int id, String name_course, String teacher, String description, Date createdAt, Date updatedAt, Date deletedAt) {
         this.id = id;
-        this.nombre_curso = nombre_curso;
-        this.profesor = profesor;
-        this.descripcion = descripcion;
+        this.name_course = name_course;
+        this.teacher = teacher;
+        this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
     }
 
-    public Curso(int id, String nombre_curso, String profesor, String descripcion) {
+    public Course(int id, String name_course, String teacher, String description) {
         this.id = id;
-        this.nombre_curso = nombre_curso;
-        this.profesor = profesor;
-        this.descripcion = descripcion;
+        this.name_course = name_course;
+        this.teacher = teacher;
+        this.description = description;
     }
 
     // *************************
@@ -51,28 +51,28 @@ public class Curso {
         this.id = id;
     }
 
-    public String getNombre_curso() {
-        return nombre_curso;
+    public String getName_course() {
+        return name_course;
     }
 
-    public void setNombre_curso(String nombre_curso) {
-        this.nombre_curso = nombre_curso;
+    public void setName_course(String name_course) {
+        this.name_course = name_course;
     }
 
-    public String getProfesor() {
-        return profesor;
+    public String getTeacher() {
+        return teacher;
     }
 
-    public void setProfesor(String profesor) {
-        this.profesor = profesor;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getCreatedAt() {
@@ -101,11 +101,11 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" +
+        return "Course{" +
                 "id=" + id +
-                ", nombre_curso='" + nombre_curso + '\'' +
-                ", profesor='" + profesor + '\'' +
-                ", descripcion='" + descripcion + '\'' +
+                ", name_course='" + name_course + '\'' +
+                ", teacher='" + teacher + '\'' +
+                ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", deletedAt=" + deletedAt +

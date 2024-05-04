@@ -1,8 +1,8 @@
 package co.edu.poli.ces.proyecto.servlet;
 
-import co.edu.poli.ces.proyecto.dao.Alumno;
-import co.edu.poli.ces.proyecto.dao.Curso;
-import co.edu.poli.ces.proyecto.dao.Horario;
+import co.edu.poli.ces.proyecto.dao.Student;
+import co.edu.poli.ces.proyecto.dao.Course;
+import co.edu.poli.ces.proyecto.dao.Schedule;
 import co.edu.poli.ces.proyecto.database.ConexionMysql;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,10 +33,10 @@ public class StudentServlet extends HttpServlet {
 
         resp.setContentType("application/json");
         PrintWriter out = resp.getWriter();
-        List<Alumno> listAlumnos = cnn.getAlumnos();
-        List<Curso> listCurso = cnn.getCursos();
-        List<Horario> listHorario = cnn.getHorarios();
-        out.print(gson.toJson(listAlumnos));
+        List<Student> listStudents = cnn.getAlumnos();
+        List<Course> listCourse = cnn.getCursos();
+        List<Schedule> listSchedule = cnn.getHorarios();
+        out.print(gson.toJson(listStudents));
         out.flush();
     }
 

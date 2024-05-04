@@ -1,8 +1,6 @@
 package co.edu.poli.ces.proyecto.servlet;
 
-import co.edu.poli.ces.proyecto.dao.Alumno;
-import co.edu.poli.ces.proyecto.dao.Curso;
-import co.edu.poli.ces.proyecto.dao.Horario;
+import co.edu.poli.ces.proyecto.dao.Student;
 import co.edu.poli.ces.proyecto.database.ConexionMysql;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,19 +33,19 @@ public class StudentServlet1 {
 
             resp.setContentType("application/json");
             PrintWriter out = resp.getWriter();
-            List<Alumno> listAlumnos = cnn.getAlumnos();
-            List<Alumno> alumnosMayoresPromedio = new ArrayList<>();
+            List<Student> listStudents = cnn.getAlumnos();
+            List<Student> alumnosMayoresPromedio = new ArrayList<>();
             int sumEdades = 0;
-            int nEstudiantes = listAlumnos.size();
+            int nEstudiantes = listStudents.size();
 
-            for (Alumno alumno: listAlumnos){
-                sumEdades = sumEdades + alumno.getEdad();
+            for (Student student : listStudents){
+                sumEdades = sumEdades + student.getEdad();
             }
 
             double promedioEdades = sumEdades / nEstudiantes;
 
 
-            for (Alumno al: listAlumnos){
+            for (Student al: listStudents){
                 if (al.getEdad() > promedioEdades) {
                     alumnosMayoresPromedio.add(al);
                 }

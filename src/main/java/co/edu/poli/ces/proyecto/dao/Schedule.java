@@ -2,14 +2,14 @@ package co.edu.poli.ces.proyecto.dao;
 
 import java.util.Date;
 
-public class Horario {
+public class Schedule {
 
-    // ******************************
-    // **   ATRIBUTOS DE LA CLASE  **
-    // ******************************
+    // *************************
+    // **   CLASS ATTRIBUTES  **
+    // *************************
 
-    private int id_estudiante;
-    private int id_curso;
+    private int id_student;
+    private int id_course;
     private Date createdAt;
     private Date updatedAt;
     private Date deletedAt;
@@ -18,20 +18,20 @@ public class Horario {
     // ** SOBRECARGA DE CONSTRUCTORES  **
     // **********************************
 
-    public Horario() {;
+    public Schedule() {;
     }
 
-    public Horario(int id_estudiante, int id_curso, Date createdAt, Date updatedAt, Date deletedAt) {
-        this.id_estudiante = id_estudiante;
-        this.id_curso = id_curso;
+    public Schedule(int id_student, int id_course, Date createdAt, Date updatedAt, Date deletedAt) {
+        this.id_student = id_student;
+        this.id_course = id_course;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
     }
 
-    public Horario(int id_estudiante, int id_curso) {
-        this.id_estudiante = id_estudiante;
-        this.id_curso = id_curso;
+    public Schedule(int id_student, int id_course) {
+        this.id_student = id_student;
+        this.id_course = id_course;
     }
 
 
@@ -40,20 +40,20 @@ public class Horario {
     // *************************
 
 
-    public int getId_estudiante() {
-        return id_estudiante;
+    public int getId_student() {
+        return id_student;
     }
 
-    public void setId_estudiante(int id_estudiante) {
-        this.id_estudiante = id_estudiante;
+    public void setId_student(int id_student) {
+        this.id_student = id_student;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public int getId_course() {
+        return id_course;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public void setId_course(int id_course) {
+        this.id_course = id_course;
     }
 
     public Date getCreatedAt() {
@@ -82,9 +82,9 @@ public class Horario {
 
     @Override
     public String toString() {
-        return "Horario{" +
-                "id_estudiante=" + id_estudiante +
-                ", id_curso=" + id_curso +
+        return "Schedule{" +
+                "id_student=" + id_student +
+                ", id_course=" + id_course +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", deletedAt=" + deletedAt +

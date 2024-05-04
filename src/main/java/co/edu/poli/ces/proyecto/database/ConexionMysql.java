@@ -1,8 +1,8 @@
 package co.edu.poli.ces.proyecto.database;
 
-import co.edu.poli.ces.proyecto.dao.Alumno;
-import co.edu.poli.ces.proyecto.dao.Curso;
-import co.edu.poli.ces.proyecto.dao.Horario;
+import co.edu.poli.ces.proyecto.dao.Student;
+import co.edu.poli.ces.proyecto.dao.Course;
+import co.edu.poli.ces.proyecto.dao.Schedule;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -35,21 +35,21 @@ public class ConexionMysql {
         }
     }
 
-    public List<Alumno> getAlumnos()  {
+    public List<Student> getAlumnos()  {
         String sql = "SELECT * FROM students";
 
-        List<Alumno> alumnos = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
         try {
             createConexion();
             Statement stmt = cnn.createStatement();
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()){
-                alumnos.add(new Alumno(result.getInt("id"),result.getString("name"),result.getString("lastName"),result.getInt("age"),result.getDate("createdAt"),result.getDate("updatedAt"),result.getDate("deletedAt")));
+                students.add(new Student(result.getInt("id"),result.getString("name"),result.getString("lastName"),result.getInt("age"),result.getDate("createdAt"),result.getDate("updatedAt"),result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
-            return alumnos;
+            return students;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
@@ -61,21 +61,21 @@ public class ConexionMysql {
         }
 
     }
-    public List<Curso> getCursos() {
+    public List<Course> getCursos() {
         String sql = "SELECT * FROM courses";
 
-        List<Curso> cursos = new ArrayList<>();
+        List<Course> courses = new ArrayList<>();
         try {
             createConexion();
             Statement stmt = cnn.createStatement();
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()) {
-                cursos.add(new Curso(result.getInt("id"), result.getString("name_course"), result.getString("teacher"), result.getString("description"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
+                courses.add(new Course(result.getInt("id"), result.getString("name_course"), result.getString("teacher"), result.getString("description"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
-            return cursos;
+            return courses;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
@@ -87,21 +87,21 @@ public class ConexionMysql {
         }
     }
 
-    public List<Horario> getHorarios() {
+    public List<Schedule> getHorarios() {
         String sql = "SELECT * FROM schedules";
 
-        List<Horario> horarios = new ArrayList<>();
+        List<Schedule> schedules = new ArrayList<>();
         try {
             createConexion();
             Statement stmt = cnn.createStatement();
             ResultSet result = stmt.executeQuery(sql);
 
             while (result.next()) {
-                horarios.add(new Horario(result.getInt("id_student"), result.getInt("id_course"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
+                schedules.add(new Schedule(result.getInt("id_student"), result.getInt("id_course"), result.getDate("createdAt"), result.getDate("updatedAt"), result.getDate("deletedAt")));
             }
             stmt.close();
             result.close();
-            return horarios;
+            return schedules;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
