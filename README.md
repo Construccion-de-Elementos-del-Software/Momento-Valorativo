@@ -2,7 +2,7 @@
 
 <h3>Important Information</h3>
 
-- [`Script SQL`](./SCRIPT): DataBase Script
+- [`Script SQL`](./SCRIPT.sql): DataBase Script
 - [`Connection to MySQL`](./src/main/java/co/edu/poli/ces/proyecto/database/ConexionMysql.java): It connects to the database and performs some queries.
 - [`DAO`](./src/main/java/co/edu/poli/ces/proyecto/dao): The classes are defined according to the database tables. The AuxStudentCourses class is created to generate a better result when displaying student courses.
 - [`StudentCourseServlet`](./src/main/java/co/edu/poli/ces/proyecto/servlet/StudentCourseServlet.java): In this file you can see the servlet that is responsible for displaying all students older than the average age. <strong>This is the path so you can see the answer: http://localhost:8089/proyecto_war_exploded/students-average-age<strong>
